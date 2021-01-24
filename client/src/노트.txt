@@ -1,0 +1,8 @@
+웹팩이 src 폴더 내에서 작동하기 때문에
+src폴더 내에서 해결하기.?
+
+actions와 reducer -> for redux
+
+components 페이지 별로
+hoc -> higher order 
+utils 자주쓰이는거

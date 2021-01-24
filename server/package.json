@@ -1,0 +1,26 @@
+{
+  "name": "react-tutorial",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000E\u0000x\u0000e\u0000r\u0000c\u0000i\u0000s\u0000e\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "backend": "nodemon index.js",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix ../client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "suro-park",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
