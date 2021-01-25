@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { DatePicker } from "antd";
+import { applyMiddleware, createStore } from "redux";
+import PromiseMiddleware from "redux-promise";
+import ReduxThunk from "redux-thunk";
+import Reducer from "./_reducer/index";
 
-import { DatePicker } from 'antd';
-
+const createStoreWithMiddleware = applyMiddleware(
+  PromiseMiddleware,
+  ReduxThunk
+)(createStore);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  
+    <Provider
+      store={createStoreWithMiddleware(Reducer,      
+          window.__REDUX_DEVTOOLS_EXTENSION__ && 
+          window.__REDUX_DEVTOOLS_EXTENSION__()
+      )}
+    >
+      <App />
+    </Provider>
+  , document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
